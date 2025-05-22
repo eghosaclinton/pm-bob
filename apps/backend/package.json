@@ -1,17 +1,23 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend for PM Bob",
   "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "dev:debug": "nodemon --exec node --inspect -r ts-node/register src/index.ts",
+    "format": "prettier --write \"src/**/*.ts\""
   },
   "keywords": [],
-  "author": "",
+  "author": "a1s0sa",
   "license": "ISC",
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@google/genai": "^0.14.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.43.1",
     "express": "^5.1.0",
@@ -25,6 +31,7 @@
     "@types/pg": "^8.15.2",
     "drizzle-kit": "^0.31.1",
     "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "tsx": "^4.19.4",

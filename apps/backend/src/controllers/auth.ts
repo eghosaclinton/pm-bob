@@ -1,3 +1,3 @@
-export class Users {
+export class Auth {
   constructor() {}
 }

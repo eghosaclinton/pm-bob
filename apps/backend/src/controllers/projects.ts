@@ -1,11 +1,7 @@
-import { db } from "../db/connect"
+import { db } from '../db/connect';
 
-export class Users{
-    constructor(){
+export class Projects {
+  constructor() {}
 
-    }
-
-    getUser(){
-
-    }
+  getProjects() {}
 }
