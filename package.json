@@ -1,7 +1,11 @@
 {
   "name": "pm-bob",
   "version": "1.0.0",
-   "packageManager": "pnpm@10.11.0", 
+  "packageManager": "pnpm@10.11.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ], 
   "description": "",
   "main": "index.js",
   "scripts": {
