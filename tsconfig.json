@@ -6,8 +6,7 @@
     "paths": {
       "@utils": ["packages/utils/src"],
       "@ui": ["packages/ui/src"],
-      "@db": ["packages/db/index.ts"],
-      "@db/schema": ["packages/db/schema/index.ts"],
+      "db": ["packages/db/index.ts"],
       "@types": ["packages/types"]
     },
     "moduleResolution": "node10",

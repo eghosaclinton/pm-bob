@@ -5,8 +5,8 @@ import { Users } from "../controllers/user";
 export const userControllers = new Users()
 const userRouter = Router()
 
-// userRouter.post('/isuser', userControllers.isUser)
-
+userRouter.post('/isuser', userControllers.isUser)
+ 
 
 
 

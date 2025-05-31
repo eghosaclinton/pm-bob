@@ -1,8 +1,15 @@
-import 'dotenv/config';
-import * as schemaa from './schema'
+import * as dotenv from 'dotenv';
+dotenv.config({ path: __dirname + "/.env" });
+
+import {Pool} from 'pg'
+import * as schema from './schema'
 import { drizzle } from 'drizzle-orm/node-postgres';
 
-export const db = drizzle(process.env.DATABASE_URL!, {schema: schemaa});
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
+
+export const db = drizzle(pool, { schema });
 
 export { account } from "./schema/account";
 export { session } from "./schema/sessions";

@@ -12,7 +12,7 @@ declare module 'express' {
 
 const app = express();
 
-console.log( userControllers.isUser())
+// console.log(userControllers.isUser())
 app.use(cookieParser())
 app.use(express.json())
 
