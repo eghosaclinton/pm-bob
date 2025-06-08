@@ -1,23 +1,18 @@
-import {auth} from "@/lib/auth"
-import { headers } from "next/headers"
-import { redirect } from "next/navigation"
+import { headers } from 'next/headers'
+import { redirect } from 'next/navigation'
 
-
-export default async function DashboardLayOut({children}: {
+export default async function DashboardLayOut({
+    children,
+}: {
     children: React.ReactNode
-}){
+}) {
+    // const session = await auth.api.getSession({
+    //     headers: await headers()
+    // })
 
-    const session = await auth.api.getSession({
-        headers: await headers()
-    })
+    // if (!session){
+    //     redirect('/login')
+    // }
 
-    if (!session){
-        redirect('/login')
-    }
-
-    return (
-        <main>
-            {children}
-        </main>
-    )
+    return <main>{children}</main>
 }

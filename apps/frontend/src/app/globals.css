@@ -133,3 +133,22 @@
 .loader{
   animation: spin 2s linear infinite;
 }
+
+hr{
+  /* height: 5px; */
+  width: 25%;
+  /* flex-shrink: 20%; */
+  border: solid 1px var(--border);
+
+}
+
+@media (min-width:800px) {
+  hr{
+    /* height: 5px; */
+    width: 30%;
+    /* flex-shrink: 20%; */
+    border: solid 1px var(--border);
+
+  }
+}
+

@@ -9,7 +9,10 @@
     "build": "tsc",
     "dev": "nodemon",
     "dev:debug": "nodemon --exec node --inspect -r ts-node/register src/index.ts",
-    "format": "prettier --write \"src/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\"",
+    "db:generate": "npx drizzle-kit generate",
+    "db:migrate": "npx drizzle-kit migrate",
+    "db:update": "pnpm run db:generate && pnpm run db:migrate"
   },
   "keywords": [],
   "author": "a1s0sa",
@@ -17,7 +20,7 @@
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@google/genai": "^0.14.1",
-    "cookie-parse": "^0.4.0",
+    "better-auth": "^1.2.8",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
@@ -27,15 +30,18 @@
     "pg": "^8.16.0",
     "pino": "^9.6.0",
     "redis": "^5.1.0",
+    "resend": "^4.5.2",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.19",
     "@types/dotenv": "^8.2.3",
     "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.15.18",
     "@types/pg": "^8.15.2",
+    "drizzle-kit": "^0.31.1",
     "nodemon": "^3.1.10",
     "prettier": "^3.5.3",
     "ts-node-dev": "^2.0.0",

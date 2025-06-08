@@ -7,6 +7,7 @@
       "@utils": ["packages/utils/src"],
       "@ui": ["packages/ui/src"],
       "db": ["packages/db/index.ts"],
+      "db/next": ["packages/db/next/index.ts"],
       "@types": ["packages/types"]
     },
     "moduleResolution": "node10",
