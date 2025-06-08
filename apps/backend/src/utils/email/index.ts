@@ -6,17 +6,17 @@ import { Resend } from 'resend';
 type MailOptions = {
   to: string;
   subject: string;
-  text: string;
+  html: string;
 };
 
 const resend = new Resend(process.env.RESEND_SECRET!);
 
-export async function sendEmail({ to, subject, text }: MailOptions) {
+export async function sendEmail({ to, subject, html }: MailOptions) {
   const { data, error } = await resend.emails.send({
     from: process.env.RESEND_EMAIL!,
     to,
     subject,
-    html: `<strong>${text}</strong>`,
+    html,
   });
 
   if (error) {

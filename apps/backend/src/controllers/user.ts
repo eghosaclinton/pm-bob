@@ -1,4 +1,6 @@
 import { type Request, type Response } from 'express';
+import { fromNodeHeaders } from 'better-auth/node';
+import { auth } from '../utils/auth';
 import { db } from '../db/connect';
 import { user } from '../db/schema';
 import { eq } from 'drizzle-orm';
@@ -18,5 +20,12 @@ export class Users {
         isUser: false,
       });
     }
+  }
+
+  async getUser(req: Request, res: Response) {
+    const session = await auth.api.getSession({
+      headers: fromNodeHeaders(req.headers),
+    });
+    res.json(session);
   }
 }
